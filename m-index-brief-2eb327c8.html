@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中彩网 · 彩票信息查询平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f8fafb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1d2b3a;
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 3.6rem;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+    .hero__badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: #4b6a8a;
+      border: 1px solid #dce4ec;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      background: #f1f5f9;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #0a1a2b;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #304a5e;
+      max-width: 580px;
+      margin-bottom: 1.8rem;
+    }
+    .hero__link {
+      display: inline-block;
+      background: #1d3557;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.65rem 2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .hero__link:hover {
+      background: #2a4a72;
+    }
+
+    /* ---------- sections ---------- */
+    section {
+      margin-bottom: 2.8rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      color: #0f283c;
+      border-left: 4px solid #2b5f8a;
+      padding-left: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9eef3;
+    }
+    .card strong {
+      color: #1f4662;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .card p {
+      color: #2b4257;
+      font-size: 0.95rem;
+    }
+
+    /* 说明区 使用更轻的样式 */
+    .desc-block {
+      background: white;
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid #e9eef3;
+    }
+    .desc-block p {
+      margin-bottom: 0.9rem;
+    }
+    .desc-block p:last-child {
+      margin-bottom: 0;
+    }
+    .desc-block .highlight {
+      background: #ecf3fa;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 450;
+    }
+
+    /* faq */
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+    .faq-item dt {
+      font-weight: 550;
+      color: #0a2b41;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+    .faq-item dd {
+      color: #2b4a62;
+      font-size: 0.92rem;
+      margin-left: 0;
+    }
+    .faq-more {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      border-top: 1px solid #dae2ec;
+      padding-top: 1.8rem;
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 1.2rem;
+      font-size: 0.9rem;
+      color: #406078;
+    }
+    .footer-links a {
+      color: #1d4b6e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b7cdde;
+    }
+    .footer-links a:hover {
+      color: #0b3150;
+    }
+    .footer-note {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #5f7a91;
+      border-top: 1px solid #e2eaf2;
+      padding-top: 1rem;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      .page { padding: 1.8rem 1rem 2.8rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .card { padding: 1rem 1.1rem; }
+      .desc-block { padding: 1rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <header class="hero">
+    <div class="hero__badge">信息查询 · 工具属性</div>
+    <h1>快速了解这个网站<br>是做什么的</h1>
+    <p>当你第一次打开 <a href="https://m-index-zhcw.com" style="color:#1d3557;text-decoration:underline;text-underline-offset:3px;">中彩网</a> 的页面，可能会想：这里能查什么？下面用几段话帮你理清它的定位和常见用途。</p>
+    <a class="hero__link" href="https://m-index-zhcw.com" target="_blank">中彩网</a>
+  </header>
+
+  <!-- 优势区：卡片 -->
+  <section>
+    <h2>三个直观特点</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>🧭 开奖号码与公告</strong>
+        <p>汇集多种彩票游戏的开奖结果，并附有官方公告来源，方便直接核对号码。</p>
+      </div>
+      <div class="card">
+        <strong>📋 玩法与规则说明</strong>
+        <p>每种彩票的玩法、奖级、兑奖方式都有简明介绍，适合初次接触时查阅。</p>
+      </div>
+      <div class="card">
+        <strong>🔁 数据呈现较为直接</strong>
+        <p>信息以表格或列表为主，不用层层跳转，减少查找时的操作成本。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明区：从用户角度展开 -->
+  <section>
+    <h2>什么人可能会用到它</h2>
+    <div class="desc-block">
+      <p>如果你刚刚接触彩票，或者想快速确认某期开奖号码，<a href="https://m-index-zhcw.com" style="color:#1d4b6e;text-decoration:underline;text-underline-offset:3px;">中彩网</a> 可以作为一个查询入口。它并不提供购彩服务，也不是官方机构，而是把分散的彩票信息整理到同一个页面，节省你自己去多个渠道核对的时间。</p>
+      <p>比如你想知道“双色球”上一期的红球蓝球号码，或者“3D”的试机号，这里通常都能找到对应的数据。页面结构偏向实用，没有太多装饰内容，打开之后可以很快定位到自己想要的那部分。</p>
+      <p class="highlight">一个小提醒：所有数据仅供参考，实际结果以彩票中心发布的正式公告为准。</p>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要 -->
+  <section>
+    <h2>常见疑问摘要</h2>
+    <dl>
+      <div class="faq-item">
+        <dt>这个网站是官方的吗？</dt>
+        <dd>不是。它属于第三方信息汇总平台，数据来源标注为官方渠道，但平台本身非国家彩票机构。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>能直接在这里买彩票吗？</dt>
+        <dd>不能。该网站没有购彩功能，只提供开奖结果、玩法介绍等查询类内容。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>数据更新快吗？</dt>
+        <dd>通常开奖后会有一定延迟（几分钟到数小时不等），具体取决于各彩票中心同步时间。</dd>
+      </div>
+    </dl>
+    <div class="faq-more">更多说明可以在站内「帮助」或「关于」页面找到。</div>
+  </section>
+
+  <!-- 底部链接区域 -->
+  <footer class="footer-links">
+    <span>相关资源：</span>
+    <a href="https://m-index-zhcw.com" target="_blank">中彩网</a>
+    <a href="https://www.cwl.gov.cn" target="_blank" rel="noopener">中国福利彩票</a>
+    <a href="https://www.lottery.gov.cn" target="_blank" rel="noopener">国家体育总局体彩中心</a>
+    <span style="color:#5f7a91; font-size:0.85rem;">· 信息仅供参考</span>
+  </footer>
+
+  <div class="footer-note">
+    页面仅用于介绍说明，不构成任何购买建议。彩票有风险，参与需理性。
+  </div>
+
+</div>
+</body>
+</html>
